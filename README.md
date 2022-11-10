@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Github Solution URL](https://github.com/Clement1kalu-okereke/news-homepage-main)
 
 - Live Site URL: [News App Live Site](https://news-app-main.netlify.app/)
 
