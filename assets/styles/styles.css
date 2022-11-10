@@ -1,0 +1,260 @@
+:root {
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+
+  --Soft-orange: hsl(35, 77%, 62%);
+  --Soft-red: hsl(5, 85%, 63%);
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("/assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+@keyframes slide {
+  from {
+    right: -124vw;
+  }
+  to {
+    right: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  font-family: Inter;
+}
+
+body {
+  padding: 40px;
+  background-color: var(--Off-white);
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.header__nav {
+  display: flex;
+}
+.header__title {
+  margin-right: auto;
+}
+
+.header__menuOpen,
+.header__nav__close {
+  display: none;
+  cursor: pointer;
+}
+.header__navLinks div {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+.header__navLinks a {
+  color: var(--Very-dark-blue);
+  text-decoration: none;
+}
+
+.header__navLinks a:hover {
+  color: var(--Soft-orange);
+  transition: 0s;
+}
+
+/* .body__main {
+}
+.body__side {
+}
+.body__footer {
+}
+ */
+
+.body__side {
+  background-color: var(--Very-dark-blue);
+  color: var(--Off-white);
+  padding: 20px 15px;
+  max-height: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.body__side > h1 {
+  margin: 1rem;
+  margin-left: 0;
+  color: var(--Soft-orange);
+}
+.bodySide__article > h3:hover {
+  color: var(--Soft-orange);
+  cursor: pointer;
+  transition: all 0s;
+}
+.bodySide__article span {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  color: var(--Grayish-blue);
+  font-size: 15px;
+}
+.bodySide__article {
+  padding: 1rem 0;
+}
+.body__footer {
+  margin-top: 2rem;
+}
+
+.bodyFooter__item {
+  display: grid;
+  grid-template-areas:
+    "image number"
+    "image title"
+    "image description";
+  grid-template-columns: 7rem 1fr;
+  grid-template-rows: 2rem 1rem 3rem;
+  gap: 25px;
+  margin-bottom: 2rem;
+}
+.bodyFooter__item > img {
+  grid-area: image;
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  align-self: center;
+  justify-self: center;
+}
+.bodyFooter__item > h2 {
+  color: var(--Grayish-blue);
+  grid-area: number;
+  font-weight: 800;
+}
+.bodyFooter__item > h3 {
+  color: var(--Very-dark-blue);
+  grid-area: title;
+  transition: 0s;
+}
+.bodyFooter__item > h3:hover {
+  transition: 0s;
+  cursor: pointer;
+  color: var(--Soft-red);
+}
+.bodyFooter__item > p {
+  grid-area: description;
+  font-size: 15px;
+  color: var(--Dark-grayish-blue);
+}
+.bodyDivider {
+  margin: auto;
+  width: 98%;
+  color: var(--Off-white);
+}
+
+.textContainer__paragraph p {
+  font-size: 1.5rem;
+  padding-top: 25px;
+}
+
+.textContainer__paragraph button {
+  background-color: var(--Soft-red);
+  color: white;
+  font: inherit;
+  border: none;
+  padding: 15px;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0s;
+}
+
+.textContainer__paragraph button:hover {
+  background-color: var(--Very-dark-blue);
+  transition: all 0s;
+}
+
+@media screen and (max-width: 375px) {
+  .header__menuOpen {
+    display: block;
+    margin-left: auto;
+  }
+  .header__navLinks {
+    display: none;
+  }
+  .header__navLinks {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.445);
+    width: 100vw;
+    height: 100%;
+  }
+  .header__nav__close {
+    display: block;
+    width: 100%;
+  }
+  .header__nav__close img {
+    display: block;
+    float: right;
+  }
+  .header__navLinks div {
+    flex-direction: column;
+    background-color: var(--Off-white);
+    width: 70%;
+    padding: 15px;
+    float: right;
+    height: 100%;
+  }
+  .header__nav__open {
+    animation: slide 0.6s ease;
+    display: block;
+  }
+}
+
+picture,
+picture > source,
+picture > img {
+  max-width: 100%;
+}
+
+.textContainer__heading {
+  color: var(--Very-dark-blue);
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+  .body {
+    display: grid;
+    grid-template-areas:
+      "article article side"
+      "article article side"
+      "footer footer footer";
+    gap: 20px 35px;
+  }
+  .body__main {
+    grid-area: article;
+  }
+  .body__side {
+    grid-area: side;
+  }
+  .body__footer {
+    grid-area: footer;
+    display: flex;
+  }
+  .body__side {
+    margin: 0;
+  }
+  .textContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .textContainer > * {
+    width: 50%;
+  }
+  .textContainer__heading h1 {
+    width: 9ch;
+  }
+}
+.textContainer {
+  padding-top: 1rem;
+}
